@@ -13,7 +13,7 @@ Le serveur est programmé avec `Node.js` et le framework `express.js`. Pour le l
 ```
 Puis, le serveur se lance avec la commande:
 ```
-    node bin/www
+    npm start
 ```
 
 Le client peut être exécuté indépendament du serveur. Pour le lancer à partir de l'outil [Angular CLI](https://cli.angular.io/), il suffit de se positionner dans le dossier `client` et de faire la commande:

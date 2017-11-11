@@ -1,23 +1,33 @@
 {
   "name": "library",
   "version": "0.0.0",
-  "private": true,
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "./node_modules/.bin/nodemon ./bin/www",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "format": "./node_modules/.bin/prettier-eslint \"src/**/*.js\" --write"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5",
-    "stylus": "0.54.5",
-    "keygenerator": "1.0.4"
+    "keygenerator": "1.0.4",
+    "morgan": "~1.9.0"
   },
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "nodemon": "^1.12.1",
+    "prettier-eslint-cli": "^4.4.0"
+  },
   "author": "",
   "license": "ISC",
   "description": ""
