@@ -4,17 +4,26 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BucketItemComponent } from './bucket-item/bucket-item.component';
+import { BucketListComponent } from './bucket-list/bucket-list.component';
+import { UserComponent } from './user/user.component';
+import {LibraryService} from './library.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent
+    BookComponent,
+    BookListComponent,
+    BucketItemComponent,
+    BucketListComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [LibraryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

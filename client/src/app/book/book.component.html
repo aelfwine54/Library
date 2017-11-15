@@ -1,8 +1,8 @@
-<article>
-  <h1>{{title}}</h1>
+<article *ngIf="book">
+  <h1>{{book.title}}</h1>
     <ul>
-        <li>Auteur : {{author}}</li>
-        <li>Année : {{year}}</li>
-        <li>Prix : {{price}}</li>
+        <li>Auteur : {{book.author}}</li>
+        <li>Année : {{book.year}}</li>
+        <li>Prix : {{book.price}}</li>
     </ul>
 </article>
