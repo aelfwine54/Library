@@ -1,3 +1,9 @@
-<p>
-  bucket-list works!
-</p>
+<section>
+  <h1>Panier d'achats</h1>
+  <p>Votre panier contient {{bucketList.length}} livre(s).</p>
+  <ul>
+    <li *ngFor="let item of bucketList">
+      <app-bucket-item [item]="item"></app-bucket-item>
+    </li>
+  </ul>
+</section>

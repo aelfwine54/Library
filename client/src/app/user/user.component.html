@@ -1,3 +1,15 @@
-<p>
-  user works!
-</p>
+<div>
+    <div>
+        <div *ngIf="!connected">
+            <form>
+                <input type="email" placeholder="Votre courriel" required/>
+                <input type="password" placeholder="Mot de passe" required />
+                <input type="submit" (click)="connect()" value="Connexion" />
+            </form>
+        </div>
+        <div *ngIf="connected" >
+            <button (click)="disconnect()">Déconexion</button>
+        </div>
+    </div>
+    <app-bucket-list *ngIf="connected"></app-bucket-list>
+</div>

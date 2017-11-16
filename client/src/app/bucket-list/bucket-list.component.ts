@@ -1,16 +1,23 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-bucket-list',
   templateUrl: './bucket-list.component.html',
-  styleUrls: ['./bucket-list.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./bucket-list.component.css']
 })
 export class BucketListComponent implements OnInit {
 
-  constructor() { }
+  bucketList = [];
+
+  constructor(
+      private location: Location
+  ) { }
 
   ngOnInit() {
   }
 
+  goBack(): void {
+      this.location.back();
+  }
 }
