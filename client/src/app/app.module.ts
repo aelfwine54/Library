@@ -9,6 +9,7 @@ import { BucketItemComponent } from './bucket-item/bucket-item.component';
 import { BucketListComponent } from './bucket-list/bucket-list.component';
 import { UserComponent } from './user/user.component';
 import {LibraryService} from './library.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {LibraryService} from './library.service';
     UserComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [LibraryService],
   bootstrap: [AppComponent]

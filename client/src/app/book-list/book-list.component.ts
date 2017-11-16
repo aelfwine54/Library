@@ -9,8 +9,6 @@ import { Book } from '../book';
 })
 export class BookListComponent implements OnInit {
 
-    selectedBook: Book;
-
     books: Book[];
 
   constructor(private libraryService: LibraryService) { }
@@ -19,8 +17,8 @@ export class BookListComponent implements OnInit {
     this.getBooks();
   }
 
-    getBooks(): void {
-      this.libraryService.getBooks()
-          .subscribe(books => this.books = books);
+  getBooks(): void {
+    this.libraryService.getBooks()
+        .subscribe(books => this.books = books);
   }
 }

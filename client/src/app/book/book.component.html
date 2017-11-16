@@ -1,8 +1,10 @@
 <article *ngIf="book">
   <h1>{{book.title}}</h1>
+    <img src="{{book.imgUrl}}" />
     <ul>
         <li>Auteur : {{book.author}}</li>
         <li>Année : {{book.year}}</li>
         <li>Prix : {{book.price}}</li>
     </ul>
+    <button (click)="goBack()">Retour</button>
 </article>
