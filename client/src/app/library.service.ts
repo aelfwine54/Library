@@ -1,36 +1,64 @@
 import { Injectable } from '@angular/core';
 import { Book } from './Book';
 import {Observable} from 'rxjs/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {User} from './User';
+import { catchError, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class LibraryService {
 
-    BOOKS = [
-        {id: 0, title:  'David Copperfield', author: 'Charles Dickens', year: 1850, price: 19.99,
-            imgUrl: 'http://3.bp.blogspot.com/-rP86bw2191I/UbvSjZw0okI/AAAAAAAAEoY/ESplku0oZ1s/s1600/copperfield.jpg'},
-        {id: 1, title:  'A study in Scarlet', author: 'Arthur Conan Doyle', year: 1887, price: 15.49,
-            imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/ArthurConanDoyle_AStudyInScarlet_annual.jpg'},
-        {id: 2, title:  'Le comte de Monte-Cristo', author: 'Alexandre Dumas', year: 1845, price: 34.35,
-            imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis_Fran%C3%A7ais-Dant%C3%A8s_sur_son_rocher.jpg'},
-        {id: 3, title:  'Mathias Sandorf', author: 'Jules Verne', year: 1885, price: 20.95,
-            imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/5194CoDcbqL._SY344_BO1,204,203,200_.jpg'}
-    ];
+    private libraryURL = 'http://localhost:3000';
 
-  constructor() {
-  }
-
-    // getHeroes(): Observable<Hero[]> {
-    //     // Todo: send the message _after_ fetching the heroes
-    //     this.messageService.add('HeroService: fetched heroes');
-    //     return of(HEROES);
-    // }
+  constructor(
+      private http: HttpClient
+  ) {}
 
   getBooks(): Observable<Book[]> {
-    return of(this.BOOKS);
+    return this.http.get<Book[]>( this.libraryURL + '/books')
+        .pipe(
+            catchError(this.handleError('betBooks', []))
+        );
   }
 
     getBook(id: number) {
-        return of(this.BOOKS[id]);
+      // TODO use
+        return this.http.get<Book>( this.libraryURL + '/books/' + id)
+            .pipe(
+                catchError(this.handleError('getBooks/' + id, null))
+            );
+    }
+
+    connect(email: string, cryptedPassword: string) {
+      return this.http.get<User>(this.libraryURL + '/users/connect?email=' + email + '&cryptedPassword=' + cryptedPassword)
+          .pipe(
+              catchError(this.handleError('users/connect?email=' + email + '&cryptedPassword=' + cryptedPassword, null))
+          );
+    }
+
+    disconnect(userId: number, key: string) {
+        return this.http.get<User>(this.libraryURL + '/users/' + userId + '/disconnect?key=' + key)
+            .pipe(
+                catchError(this.handleError('/users/' + userId + '/disconnect?key=' + key, null))
+            );
+    }
+
+
+    /**
+     * Handle Http operation that failed.
+     * Let the app continue.
+     * @param operation - name of the operation that failed
+     * @param result - optional value to return as the observable result
+     */
+    private handleError<T> (operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+
+            // TODO: send the error to remote logging infrastructure
+            console.error(error); // log to console instead
+
+            // Let the app keep running by returning an empty result.
+            return of(result as T);
+        };
     }
 }
