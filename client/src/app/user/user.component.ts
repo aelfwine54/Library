@@ -29,6 +29,8 @@ export class UserComponent implements OnInit {
 
   disconnect() {
     this.userService.disconnect(this.user.id, this.user.currentKey);
+    this.providedEmail = null;
+    this.providedPassword = null;
   }
 
   private userChanged(item: User) {
