@@ -1,5 +1,5 @@
 <article>
     <img src="{{item.book.imgUrl}}" />
-    <p>{{item.book.title}} - {{item.book.price}}</p>
+    {{item.book.title}} - {{item.book.price | currency}}
     <button (click)="deleteBucketItem(item.id)">Retirer</button>
 </article>
