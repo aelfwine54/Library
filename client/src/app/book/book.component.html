@@ -7,5 +7,7 @@
         <li>Prix : {{book.price}}</li>
         <li *ngIf="user.connected"><button (click)="addToBucket()">Acheter</button></li>
     </ul>
-    <button (click)="goBack()">Retour</button>
+    <p>
+        <button (click)="goBack()">Retour</button>
+    </p>
 </article>
