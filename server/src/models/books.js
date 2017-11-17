@@ -20,7 +20,7 @@ class Book {
 
 const books = [
   new Book('David Copperfield', 'Charles Dickens', 1850, 19.99,
-      'http://3.bp.blogspot.com/-rP86bw2191I/UbvSjZw0okI/AAAAAAAAEoY/ESplku0oZ1s/s1600/copperfield.jpg'),
+      'http://thebookmusings.com/wp-content/uploads/2014/09/David-Copperfield-by-Charles-Dickens.jpg'),
   new Book('A study in Scarlet', 'Arthur Conan Doyle', 1887, 15.49,
       'https://upload.wikimedia.org/wikipedia/commons/2/2c/ArthurConanDoyle_AStudyInScarlet_annual.jpg'),
   new Book('Le comte de Monte-Cristo', 'Alexandre Dumas', 1845, 34.35,
