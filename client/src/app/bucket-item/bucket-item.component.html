@@ -1,2 +1,5 @@
-<app-book ></app-book>
-<button (click)="deleteBucketItem(item.id)">Retirer</button>
+<article>
+    <img src="{{item.book.imgUrl}}" />
+    <p>{{item.book.title}} - {{item.book.price}}</p>
+    <button (click)="deleteBucketItem(item.id)">Retirer</button>
+</article>

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 
 import {BucketItem} from '../BucketItem';
-import { LibraryService } from '../library.service';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-bucket-item',
@@ -13,15 +13,15 @@ export class BucketItemComponent implements OnInit {
   @Input() item: BucketItem;
 
   constructor(
-      private libraryService: LibraryService,
+      private userService: UserService,
   ) { }
 
   ngOnInit() {
-      // this.getBucketItem();
+
   }
 
   deleteBucketItem(id: number): void {
-    // TODO delete item
+    this.userService.deleteBucketItem(id);
   }
 
 
