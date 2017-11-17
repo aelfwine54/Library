@@ -23,4 +23,5 @@ Le client peut être exécuté indépendament du serveur. Pour le lancer à part
 
 ## TODO
 * Stocker les modèles dans MongoDB
-* Faire le client Angular
+* Ajouter la création de compte
+* Améliorer le visuel
