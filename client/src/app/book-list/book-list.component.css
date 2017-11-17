@@ -1,0 +1,13 @@
+ul{
+    list-style-type: none;
+}
+li{
+    display: inline-block;
+    width: 250px;
+    margin: 15px;
+    cursor: pointer;
+}
+img{
+    max-height: 375px;
+    width: 250px;
+}
