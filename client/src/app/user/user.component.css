@@ -1,0 +1,10 @@
+#connexion{
+    position: absolute;
+    top:0;
+    right:0;
+    background-color: black;
+    width: 100%;
+    text-align: right;
+    padding: 7px;
+    border-bottom: 2px solid dimgray;
+}
