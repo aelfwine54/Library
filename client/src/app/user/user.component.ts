@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {LibraryService} from '../library.service';
+import {UserService} from '../user.service';
 import {User} from '../User';
 
 @Component({
@@ -15,8 +15,10 @@ export class UserComponent implements OnInit {
   user: User;
 
   constructor(
-      private libraryService: LibraryService
-  ) { }
+      private userService: UserService
+  ) {
+      userService.userChanged$.subscribe(item => this.userChanged(item));
+  }
 
   ngOnInit() {
   }
@@ -24,7 +26,7 @@ export class UserComponent implements OnInit {
   connect() {
 
     try {
-        this.libraryService.connect(this.providedEmail, this.providedPassword).subscribe(user => this.user = user);
+        this.user = this.userService.connect(this.providedEmail, this.providedPassword);
         this.connected = true;
     } catch (Exception) {
         this.connected = false;
@@ -33,10 +35,14 @@ export class UserComponent implements OnInit {
 
   disconnect() {
       try {
-          this.libraryService.disconnect(this.user.id, this.user.currentKey).subscribe(user => this.user = user);
+          this.user = this.userService.disconnect(this.user.id, this.user.currentKey);
           this.connected = false;
       } catch (Exception) {
           this.connected = true;
       }
+  }
+
+  private userChanged(item: User) {
+     this.user = item;
   }
 }

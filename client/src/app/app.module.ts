@@ -12,6 +12,7 @@ import { UserComponent } from './user/user.component';
 import {LibraryService} from './library.service';
 import { AppRoutingModule } from './/app-routing.module';
 import {FormsModule} from '@angular/forms';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [LibraryService],
+  providers: [LibraryService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

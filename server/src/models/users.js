@@ -37,7 +37,7 @@ const users = [
   new User('Vincent', 'Ducharme', 'vincent.ducharme@usherbrooke.ca', 'fdsfsdfsdf'),
   new User('Gabriel', 'Girard', 'gabriel.girard@usherbrooke.ca', 'vcxvbxcbvcbvcbcb'),
   new User('Wathek Bellah', 'Loued', 'wathek.bellah.loued@usherbrooke.ca', 'gbdfgcbfggsfdgreuiuo'),
-  new User('Short', 'Test', 'short', 'sfdgdfgghfht')
+  new User('Short', 'Test', 'a', 'a')
 ];
 
 module.exports.users = users;

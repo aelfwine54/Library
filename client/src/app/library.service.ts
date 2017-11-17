@@ -29,22 +29,6 @@ export class LibraryService {
                 catchError(this.handleError('getBooks/' + id, null))
             );
     }
-
-    connect(email: string, cryptedPassword: string) {
-      return this.http.get<User>(this.libraryURL + '/users/connect?email=' + email + '&cryptedPassword=' + cryptedPassword)
-          .pipe(
-              catchError(this.handleError('users/connect?email=' + email + '&cryptedPassword=' + cryptedPassword, null))
-          );
-    }
-
-    disconnect(userId: number, key: string) {
-        return this.http.get<User>(this.libraryURL + '/users/' + userId + '/disconnect?key=' + key)
-            .pipe(
-                catchError(this.handleError('/users/' + userId + '/disconnect?key=' + key, null))
-            );
-    }
-
-
     /**
      * Handle Http operation that failed.
      * Let the app continue.

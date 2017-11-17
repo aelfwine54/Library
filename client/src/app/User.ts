@@ -9,4 +9,8 @@ export class User {
     currentKey: string;
     connected: boolean;
     cryptedPassword: string;
+
+    constructor() {
+        this.connected = false;
+    }
 }
