@@ -4,7 +4,7 @@
     <ul>
         <li>Auteur : {{book.author}}</li>
         <li>Année : {{book.year}}</li>
-        <li>Prix : {{book.price}}</li>
+        <li>Prix : {{book.price | currency}}</li>
         <li *ngIf="user.connected"><button (click)="addToBucket()">Acheter</button></li>
     </ul>
     <p>
