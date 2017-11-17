@@ -11,7 +11,6 @@ export class UserComponent implements OnInit {
 
   providedEmail: string;
   providedPassword: string;
-  connected = false;
   user: User;
 
   constructor(
@@ -21,28 +20,19 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.user = this.userService.getUser();
   }
 
-  connect() {
-
-    try {
-        this.user = this.userService.connect(this.providedEmail, this.providedPassword);
-        this.connected = true;
-    } catch (Exception) {
-        this.connected = false;
-    }
+  onSubmit() {
+    this.userService.connect(this.providedEmail, this.providedPassword);
   }
 
   disconnect() {
-      try {
-          this.user = this.userService.disconnect(this.user.id, this.user.currentKey);
-          this.connected = false;
-      } catch (Exception) {
-          this.connected = true;
-      }
+    this.userService.disconnect(this.user.id, this.user.currentKey);
   }
 
   private userChanged(item: User) {
      this.user = item;
+     console.log(item);
   }
 }

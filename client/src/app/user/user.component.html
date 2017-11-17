@@ -1,6 +1,6 @@
 <div>
     <div>
-        <div *ngIf="!connected">
+        <div *ngIf="!user.connected">
             <form (ngSubmit)="onSubmit()" #connectForm="ngForm">
                 <input type="email"
                        [(ngModel)]="providedEmail" name="email"
@@ -11,12 +11,12 @@
                        [(ngModel)]="providedPassword" name="password"
                        placeholder="Mot de passe"
                        required />
-                <input type="submit" (click)="connect()" value="Connexion" [disabled]="!connectForm.form.valid"/>
+                <input type="submit"  value="Connexion" [disabled]="!connectForm.form.valid"/>
             </form>
         </div>
-        <div *ngIf="connected" >
+        <div *ngIf="user.connected" >
             <button (click)="disconnect()">Déconnexion</button>
         </div>
     </div>
-    <app-bucket-list *ngIf="connected"></app-bucket-list>
+    <app-bucket-list *ngIf="user.connected"></app-bucket-list>
 </div>

@@ -47,6 +47,5 @@ export class BookComponent implements OnInit {
 
   private userChanged(item: User) {
       this.user = item;
-      console.log(item);
   }
 }
