@@ -1,24 +1,31 @@
 # Library
-Cette librairie en ligne est un exemple pour la MEAN stack pour le cours IFT604 donné à l'[Université de Sherbrooke](http://usherbrooke.ca).
+Cette biliothèque en ligne est un exemple de la pile MEAN pour le cours [IFT604](https://www.usherbrooke.ca/admission/fiches-cours/IFT604/) donné à l'[Université de Sherbrooke](http://usherbrooke.ca).
 
 ## Avertissement
-Le code ci-présenté n'est en aucun cas sécuritaire et ne devrait pas être utiliser tel quel pour une vrai application de commerce électronique.
+Le code présenté dans ce dépôt n'est en aucun cas sécuritaire et ne devrait pas être utilisé (tel quel du moins) pour le développement d'une application de commerce électronique destinée à un usage commercial.
 
 ## Fonctionnement
-Le serveur et client sont conçus pour fonctionner de façon indépendante, selon l'architecture REST. Le client n'est pas encore fonctionnel toutefois.
+Le serveur et client sont conçus pour fonctionner de façon indépendante, selon l'architecture REST. Toutefois, le client n'est pas encore complètement fonctionnel.
 
-Le serveur est programmé avec `Node.js` et le framework `express.js`. Pour le lancer, il faut d'abord récupérer les modules de nodes avec la commande à partir du dossier `server`:
+Le serveur utilise le framework Express.js, qui lui-même est basé sur l'environnement Node.js. Pour le démarrer, il faut d'abord installer les dépendances requises depuis le dossier `server` :
 ```
-    npm install
-```
-Puis, le serveur se lance avec la commande:
-```
-    npm start
+  npm install
 ```
 
-Le client peut être exécuté indépendament du serveur. Pour le lancer à partir de l'outil [Angular CLI](https://cli.angular.io/), il suffit de se positionner dans le dossier `client` et de faire la commande:
+Puis, le serveur peut être démarré avec la commande suivante :
 ```
-    ng serve
+  npm start
+```
+
+Pour démarrer le client, il faut d'abord installer les dépendances requises depuis le dossier `client` :
+
+```
+  npm install
+```
+
+Puis, le client peut être démarré avec la commande suivante :
+```
+  npm start
 ```
 
 ## TODO
